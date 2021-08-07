@@ -3,22 +3,33 @@
     <p>
         <%= homecontent %>
     </p>
-
+<hr>
     <% posts.forEach(function(post){ %>
-        <h1>
-            <%= post.title %>
-        </h1>
-        
-        <p>
-            <%= post.content.substring(0,100) + " ..."%>
-            <a href="/post/<%= post.title %>">Read More</a>
-        </p>
-        
+        <div class="posts">
+            <div class="icon">
+                <img src="<%= post.link %>" alt="" class="intro-title-img">
+
+            </div>
+            <div class="content bold">
+                <h2>
+                    <%= post.title %>
+                </h2>
+
+                <p class="p-pro">
+                    <%= post.content.substring(0,600) + " ..." %>
+                        <a  href="/post/<%= post._id %>">Read More</a>
+                </p>
+
+            </div>
+
+
+        </div>
+        <hr>
         <br>
-                    <% }) %>
+        <% }) %>
 
 
 
 
 
-                        <%- include("partials/footer") -%>
+            <%- include("partials/footer") -%>
