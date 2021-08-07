@@ -219,14 +219,15 @@ app.get("/projects/post/:postId", function (req, res) {
       res.render("post", { posttitle: _.upperFirst(req.params.postname), postcontent: post.content, postlink: post.link });
     }
   });
+});
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 
-})
-
-
-
-
-app.listen(process.env.PORT || 3000, function () {
+app.listen(port, function () {
   console.log("Humko maro humko jinda mtt chdo saalo");
 });
 
